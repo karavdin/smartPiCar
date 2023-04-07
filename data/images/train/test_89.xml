@@ -1,0 +1,26 @@
+<annotation>
+	<folder>lego_pic_2</folder>
+	<filename>test_89.jpg</filename>
+	<path>/Users/rdyo/code/DeepPiCar_karavdin/lego_pic_2/test_89.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2592</width>
+		<height>1944</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Cam</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1448</xmin>
+			<ymin>981</ymin>
+			<xmax>1612</xmax>
+			<ymax>1214</ymax>
+		</bndbox>
+	</object>
+</annotation>

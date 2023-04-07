@@ -1,0 +1,26 @@
+<annotation>
+	<folder>lego_pic_2</folder>
+	<filename>test_52.jpg</filename>
+	<path>/Users/rdyo/code/DeepPiCar_karavdin/lego_pic_2/test_52.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2592</width>
+		<height>1944</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Babushka</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1248</xmin>
+			<ymin>959</ymin>
+			<xmax>1426</xmax>
+			<ymax>1221</ymax>
+		</bndbox>
+	</object>
+</annotation>
