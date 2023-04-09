@@ -71,9 +71,9 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
     counter += 1
 
     # Convert the image from BGR to RGB as required by the TFLite model.
-    #rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     #rgb_image = cv2.cvtColor(image, cv2.COLOR_XRGB2RGB)
-    rgb_image = image #picamera2 seems to give RGB image already
+    #rgb_image = image #picamera2 seems to give RGB image already
     # Create a TensorImage object from the RGB image.
     input_tensor = vision.TensorImage.create_from_array(rgb_image)
 
@@ -95,9 +95,9 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
     cv2.putText(image, fps_text, text_location, cv2.FONT_HERSHEY_PLAIN,
                 font_size, text_color, font_thickness)
 
-    # Stop the program if the ESC key is pressed.
-    if cv2.waitKey(1) == 27:
-      break
+    # # Stop the program if the ESC key is pressed.
+    # if cv2.waitKey(1) == 27:
+    #   break
     cv2.imshow('object_detector', image)
 
   #cap.release()
