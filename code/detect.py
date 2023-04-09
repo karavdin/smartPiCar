@@ -69,7 +69,7 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
   #stride = picam2.stream_configuration("lores")["stride"]
   #picam2.post_callback = DrawRectangles
   picam2.start()
-  time.sleep(2)
+  time.sleep(10)
   while True:
     image = picam2.capture_array()
 
@@ -131,13 +131,13 @@ def main():
       help='Width of frame to capture from camera.',
       required=False,
       type=int,
-      default=1296)
+      default=800)
   parser.add_argument(
       '--frameHeight',
       help='Height of frame to capture from camera.',
       required=False,
       type=int,
-      default=972)
+      default=600)
   parser.add_argument(
       '--numThreads',
       help='Number of CPU threads to run the model.',
