@@ -67,7 +67,7 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
   picam2.start()
 
   while True:
-    time.sleep(1)
+    #time.sleep(1)
     image = picam2.capture_array("main")
     counter += 1
 

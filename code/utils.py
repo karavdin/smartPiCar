@@ -19,7 +19,7 @@ from tflite_support.task import processor
 
 _MARGIN = -20  # pixels
 _ROW_SIZE = 10  # pixels
-_FONT_SIZE = 0.65
+_FONT_SIZE = 0.7
 _FONT_THICKNESS = 1
 #_TEXT_COLOR = (0, 0, 255)  # red
 _TEXT_COLOR = (0, 255, 255)  # yellow
@@ -50,7 +50,7 @@ def visualize(
     category_name = category.category_name
     probability = round(category.score, 2)
     result_text = category_name + ' (' + str(probability) + ')'
-    text_location = (_MARGIN + 3*_ROW_SIZE + bbox.origin_x,
+    text_location = (_MARGIN + 2.5*_ROW_SIZE + bbox.origin_x,
                      _MARGIN + _ROW_SIZE + bbox.origin_y)
     font = cv2.FONT_HERSHEY_SIMPLEX #normal size
     #font = cv2.FONT_HERSHEY_SCRIPT_SIMPLEX #hand-writing
