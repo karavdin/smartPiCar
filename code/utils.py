@@ -50,7 +50,7 @@ def visualize(
     category_name = category.category_name
     probability = round(category.score, 2)
     result_text = category_name + ' (' + str(probability) + ')'
-    text_location = (_MARGIN + 2.5*_ROW_SIZE + bbox.origin_x,
+    text_location = (_MARGIN + 3*_ROW_SIZE + bbox.origin_x,
                      _MARGIN + _ROW_SIZE + bbox.origin_y)
     font = cv2.FONT_HERSHEY_SIMPLEX #normal size
     #font = cv2.FONT_HERSHEY_SCRIPT_SIMPLEX #hand-writing
