@@ -14,6 +14,7 @@ from tflite_support.task import vision
 import utils
 
 from picamera2 import Picamera2, Preview
+from libcamera import controls
 
 def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
         enable_edgetpu: bool) -> None:
