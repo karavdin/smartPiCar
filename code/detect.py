@@ -120,13 +120,13 @@ def main():
       help='Width of frame to capture from camera.',
       required=False,
       type=int,
-      default=640)
+      default=1920)
   parser.add_argument(
       '--frameHeight',
       help='Height of frame to capture from camera.',
       required=False,
       type=int,
-      default=480)
+      default=1080)
   parser.add_argument(
       '--numThreads',
       help='Number of CPU threads to run the model.',
