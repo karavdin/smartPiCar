@@ -68,15 +68,15 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
   #picam2.start_preview(Preview.QT) #For RaspberryPi remote
   #stride = picam2.stream_configuration("lores")["stride"]
   #picam2.post_callback = DrawRectangles
-  #picam2.start(show_preview=True)
-  picam2.start()
+  picam2.start(show_preview=True)
+  #picam2.start()
   # time.sleep(10)
   # picam2 = Picamera2()
   # config = picam2.create_preview_configuration()
   # picam2.configure(config)
   # 
   #time.sleep(2)
-  picam2.stop_preview()
+  #picam2.stop_preview()
   # picam2.start_preview(True)
   # time.sleep(2)
   capture_config = picam2.create_still_configuration(main={"size": normalSize},
