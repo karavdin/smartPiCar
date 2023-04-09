@@ -83,8 +83,8 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
                                                  lores={"size": lowresSize})
   while True:
     time.sleep(1)
-    image = picam2.switch_mode_and_capture_array(capture_config, "main")
-    #image = picam2.capture_array()
+    #image = picam2.switch_mode_and_capture_array(capture_config, "main")
+    image = picam2.capture_array()
 
   #while cap.isOpened():
   #  success, image = cap.read()
