@@ -57,10 +57,10 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
 
   # Continuously capture images from the camera and run inference
   normalSize = (width, height)
-  lowresSize = (width, height) 
+  #lowresSize = (width, height) 
   picam2 = Picamera2()
   
-  config = picam2.create_preview_configuration(main={"size": normalSize, "format":"YUV420"})
+  config = picam2.create_preview_configuration(main={"size": normalSize, "format":"RGB888"})
   picam2.configure(config)
   # picam2.options["quality"] = 95
   # picam2.options["compress_level"] = 2
