@@ -64,8 +64,8 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
                                                  lores={"size": lowresSize})
   picam2.configure(config)
   #picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous}) #Autofocus
-  picam2.start_preview(Preview.DRM) #For RaspberryPi
-  #picam2.start_preview(Preview.QT) #For RaspberryPi remote
+  #picam2.start_preview(Preview.DRM) #For RaspberryPi
+  picam2.start_preview(Preview.QT) #For RaspberryPi remote
   #stride = picam2.stream_configuration("lores")["stride"]
   #picam2.post_callback = DrawRectangles
   picam2.start()
