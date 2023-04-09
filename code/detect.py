@@ -44,7 +44,7 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
   #text_color = (0, 0, 255)  # red
   text_color = (0, 255, 255)  # yellow
   font_size = 1
-  font_thickness = 2
+  font_thickness = 1
   fps_avg_frame_count = 10
 
   # Initialize the object detection model
