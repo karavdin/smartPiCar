@@ -69,6 +69,7 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
   #stride = picam2.stream_configuration("lores")["stride"]
   #picam2.post_callback = DrawRectangles
   picam2.start()
+  time.sleep(2)
   while True:
     image = picam2.capture_array()
 
