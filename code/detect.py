@@ -56,28 +56,28 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
   detector = vision.ObjectDetector.create_from_options(options)
 
   # Continuously capture images from the camera and run inference
-  # normalSize = (width, height)
-  # lowresSize = (320, 240) 
-  # picam2 = Picamera2()
-  
-  # # config = picam2.create_preview_configuration(main={"size": normalSize},
-  # #                                                lores={"size": lowresSize})
-  # # picam2.configure(config)
-  # #picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous}) #Autofocus
-  # #picam2.start_preview(Preview.DRM) #For RaspberryPi
-  # #picam2.start_preview(Preview.QT) #For RaspberryPi remote
-  # #stride = picam2.stream_configuration("lores")["stride"]
-  # #picam2.post_callback = DrawRectangles
-  # picam2.start()
-  # time.sleep(10)
+  normalSize = (width, height)
+  lowresSize = (320, 240) 
   picam2 = Picamera2()
-  config = picam2.create_preview_configuration()
+  
+  config = picam2.create_preview_configuration(main={"size": normalSize},
+                                                 lores={"size": lowresSize})
   picam2.configure(config)
+  #picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous}) #Autofocus
+  #picam2.start_preview(Preview.DRM) #For RaspberryPi
+  #picam2.start_preview(Preview.QT) #For RaspberryPi remote
+  #stride = picam2.stream_configuration("lores")["stride"]
+  #picam2.post_callback = DrawRectangles
   picam2.start()
-  time.sleep(2)
-  picam2.stop_preview()
-  picam2.start_preview(True)
-  time.sleep(2)
+  # time.sleep(10)
+  # picam2 = Picamera2()
+  # config = picam2.create_preview_configuration()
+  # picam2.configure(config)
+  # picam2.start()
+  # time.sleep(2)
+  # picam2.stop_preview()
+  # picam2.start_preview(True)
+  # time.sleep(2)
   while True:
     image = picam2.capture_array()
 
