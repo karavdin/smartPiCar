@@ -79,7 +79,8 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
   #picam2.stop_preview()
   # picam2.start_preview(True)
   # time.sleep(2)
-  capture_config = picam2.create_still_configuration()
+  capture_config = picam2.create_still_configuration(main={"size": normalSize},
+                                                 lores={"size": lowresSize})
   while True:
     time.sleep(1)
     image = picam2.switch_mode_and_capture_array(capture_config, "main")
