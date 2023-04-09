@@ -19,7 +19,7 @@ from tflite_support.task import processor
 
 _MARGIN = -20  # pixels
 _ROW_SIZE = 10  # pixels
-_FONT_SIZE = 0.5
+_FONT_SIZE = 0.75
 _FONT_THICKNESS = 1
 #_TEXT_COLOR = (0, 0, 255)  # red
 _TEXT_COLOR = (0, 255, 255)  # yellow
