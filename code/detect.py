@@ -14,7 +14,7 @@ from tflite_support.task import vision
 import utils
 
 from picamera2 import Picamera2, Preview
-from libcamera import controls
+#from libcamera import controls
 
 def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
         enable_edgetpu: bool) -> None:
@@ -63,7 +63,7 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
   config = picam2.create_preview_configuration(main={"size": normalSize},
                                                  lores={"size": lowresSize})
   picam2.configure(config)
-  picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous}) #Autofocus
+  #picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous}) #Autofocus
   picam2.start_preview(Preview.DRM) #For RaspberryPi
   #picam2.start_preview(Preview.QT) #For RaspberryPi remote
   #stride = picam2.stream_configuration("lores")["stride"]
