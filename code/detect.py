@@ -61,7 +61,7 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
   picam2 = Picamera2()
   
   config = picam2.create_preview_configuration(main={"size": normalSize, "format": "YUV420"},
-                                                 lores={"size": lowresSize, "format": "YUV420"})
+                                                 lores={"size": lowresSize})
   picam2.configure(config)
   # picam2.options["quality"] = 95
   # picam2.options["compress_level"] = 2
@@ -152,13 +152,13 @@ def main():
       help='Width of frame to capture from camera.',
       required=False,
       type=int,
-      default=648)
+      default=640)
   parser.add_argument(
       '--frameHeight',
       help='Height of frame to capture from camera.',
       required=False,
       type=int,
-      default=486)
+      default=480)
   parser.add_argument(
       '--numThreads',
       help='Number of CPU threads to run the model.',
