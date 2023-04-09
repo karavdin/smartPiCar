@@ -60,9 +60,9 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
   lowresSize = (320, 240) 
   picam2 = Picamera2()
   
-  config = picam2.create_preview_configuration(main={"size": normalSize},
-                                                 lores={"size": lowresSize})
-  picam2.configure(config)
+  # config = picam2.create_preview_configuration(main={"size": normalSize},
+  #                                                lores={"size": lowresSize})
+  # picam2.configure(config)
   #picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous}) #Autofocus
   #picam2.start_preview(Preview.DRM) #For RaspberryPi
   #picam2.start_preview(Preview.QT) #For RaspberryPi remote
