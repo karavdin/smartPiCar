@@ -62,8 +62,8 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
   
   config = picam2.create_preview_configuration(main={"size": normalSize, "format":"RGB888"})
   picam2.configure(config)
-  picam2.options["quality"] = 95
-  picam2.options["compress_level"] = 2
+  #picam2.options["quality"] = 95
+  #picam2.options["compress_level"] = 2
 
   #picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous}) #Autofocus
   #picam2.start_preview(Preview.DRM) #For RaspberryPi
@@ -151,13 +151,13 @@ def main():
       help='Width of frame to capture from camera.',
       required=False,
       type=int,
-      default=640)
+      default=800)
   parser.add_argument(
       '--frameHeight',
       help='Height of frame to capture from camera.',
       required=False,
       type=int,
-      default=480)
+      default=600)
   parser.add_argument(
       '--numThreads',
       help='Number of CPU threads to run the model.',
