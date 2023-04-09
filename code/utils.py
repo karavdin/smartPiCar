@@ -52,7 +52,7 @@ def visualize(
     result_text = category_name + ' (' + str(probability) + ')'
     text_location = (_MARGIN + 3*_ROW_SIZE + bbox.origin_x,
                      _MARGIN + _ROW_SIZE + bbox.origin_y)
-    cv2.putText(image, result_text, text_location, cv2.FONT_HERSHEY_SIMPLEX,
+    cv2.putText(image, result_text, text_location, cv2.FONT_HERSHEY_SCRIPT_SIMPLEX,
                 _FONT_SIZE, _TEXT_COLOR, _FONT_THICKNESS)
 
   return image
