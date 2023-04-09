@@ -19,7 +19,7 @@ from tflite_support.task import processor
 
 _MARGIN = -20  # pixels
 _ROW_SIZE = 10  # pixels
-_FONT_SIZE = 1
+_FONT_SIZE = 0.5
 _FONT_THICKNESS = 2
 #_TEXT_COLOR = (0, 0, 255)  # red
 _TEXT_COLOR = (0, 255, 255)  # yellow
@@ -52,7 +52,7 @@ def visualize(
     result_text = category_name + ' (' + str(probability) + ')'
     text_location = (_MARGIN + 3*_ROW_SIZE + bbox.origin_x,
                      _MARGIN + _ROW_SIZE + bbox.origin_y)
-    cv2.putText(image, result_text, text_location, cv2.FONT_HERSHEY_SCRIPT_SIMPLEX,
+    cv2.putText(image, result_text, text_location, cv2.FONT_HERSHEY_SIMPLEX,
                 _FONT_SIZE, _TEXT_COLOR, _FONT_THICKNESS)
 
   return image
