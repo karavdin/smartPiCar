@@ -63,14 +63,16 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
   config = picam2.create_preview_configuration(main={"size": normalSize, "format": "YUV420"},
                                                  lores={"size": lowresSize, "format": "YUV420"})
   picam2.configure(config)
+  # picam2.options["quality"] = 95
+  # picam2.options["compress_level"] = 2
+
   #picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous}) #Autofocus
   #picam2.start_preview(Preview.DRM) #For RaspberryPi
   #picam2.start_preview(Preview.QT) #For RaspberryPi remote
   #stride = picam2.stream_configuration("lores")["stride"]
   #picam2.post_callback = DrawRectangles
   #picam2.start(show_preview=True)
-  picam2.options["quality"] = 95
-  picam2.options["compress_level"] = 2
+
   picam2.start()
   # time.sleep(10)
   # picam2 = Picamera2()
@@ -150,13 +152,13 @@ def main():
       help='Width of frame to capture from camera.',
       required=False,
       type=int,
-      default=800)
+      default=648)
   parser.add_argument(
       '--frameHeight',
       help='Height of frame to capture from camera.',
       required=False,
       type=int,
-      default=600)
+      default=486)
   parser.add_argument(
       '--numThreads',
       help='Number of CPU threads to run the model.',
