@@ -62,8 +62,8 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
   
   config = picam2.create_preview_configuration(main={"size": normalSize, "format":"RGB888"})
   picam2.configure(config)
-  # picam2.options["quality"] = 95
-  # picam2.options["compress_level"] = 2
+  picam2.options["quality"] = 95
+  picam2.options["compress_level"] = 2
 
   #picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous}) #Autofocus
   #picam2.start_preview(Preview.DRM) #For RaspberryPi
