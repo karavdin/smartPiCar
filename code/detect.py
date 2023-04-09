@@ -57,11 +57,11 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
 
   # Continuously capture images from the camera and run inference
   normalSize = (width, height)
-  lowresSize = (320, 240) 
+  lowresSize = (width, height) 
   picam2 = Picamera2()
   
-  config = picam2.create_preview_configuration(main={"size": normalSize},
-                                                 lores={"size": lowresSize})
+  config = picam2.create_preview_configuration(main={"size": normalSize, "format": "YUV420"},
+                                                 lores={"size": lowresSize, "format": "YUV420"})
   picam2.configure(config)
   #picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous}) #Autofocus
   #picam2.start_preview(Preview.DRM) #For RaspberryPi
