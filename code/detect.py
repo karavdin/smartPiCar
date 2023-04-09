@@ -42,7 +42,7 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
   row_size = 20  # pixels
   left_margin = 24  # pixels
   text_color = (0, 0, 255)  # red
-  font_size = 1
+  font_size = 2
   font_thickness = 1
   fps_avg_frame_count = 10
 
@@ -62,50 +62,18 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
   
   config = picam2.create_preview_configuration(main={"size": normalSize, "format":"RGB888"})
   picam2.configure(config)
-  #picam2.options["quality"] = 95
-  #picam2.options["compress_level"] = 2
-
-  #picam2.set_controls({"AfMode": controls.AfModeEnum.Continuous}) #Autofocus
-  #picam2.start_preview(Preview.DRM) #For RaspberryPi
-  #picam2.start_preview(Preview.QT) #For RaspberryPi remote
-  #stride = picam2.stream_configuration("lores")["stride"]
-  #picam2.post_callback = DrawRectangles
-  #picam2.start(show_preview=True)
 
   picam2.start()
-  # time.sleep(10)
-  # picam2 = Picamera2()
-  # config = picam2.create_preview_configuration()
-  # picam2.configure(config)
-  # 
-  #time.sleep(2)
-  #picam2.stop_preview()
-  # picam2.start_preview(True)
-  # time.sleep(2)
-  # capture_config = picam2.create_still_configuration(main={"size": normalSize},
-  #                                                lores={"size": lowresSize})
+
   while True:
     time.sleep(1)
-    
-    #image = picam2.switch_mode_and_capture_array(capture_config, "main")
     image = picam2.capture_array("main")
-    metadata = picam2.capture_metadata()
-    #print(metadata)
-    #print("!AAAAAA ",metadata["ExposureTime"], metadata["AnalogueGain"])
-  #while cap.isOpened():
-  #  success, image = cap.read()
-  #  if not success:
-  #    sys.exit(
-  #        'ERROR: Unable to read from webcam. Please verify your webcam settings.'
-  #    )
-
     counter += 1
-    #image = cv2.flip(image, 1)
 
     # Convert the image from BGR to RGB as required by the TFLite model.
-    rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    #rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     #rgb_image = cv2.cvtColor(image, cv2.COLOR_XRGB2RGB)
-    #rgb_image = image #picamera2 seems to give RGB image already
+    rgb_image = image #picamera2 seems to give RGB image already
     # Create a TensorImage object from the RGB image.
     input_tensor = vision.TensorImage.create_from_array(rgb_image)
 
@@ -151,7 +119,7 @@ def main():
       help='Width of frame to capture from camera.',
       required=False,
       type=int,
-      default=720)
+      default=640)
   parser.add_argument(
       '--frameHeight',
       help='Height of frame to capture from camera.',

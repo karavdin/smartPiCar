@@ -7,4 +7,4 @@ AI on RaspberryPi based car
 
 run on RaspberryPi
 >>> cd smartPiCar/code
->>> python3 detect.py --model ../data/models/lego_500_efficientdet_lite2_wholemodelRetune_edgetpu.tflite --enableEdgeTPU
+>>> python3 detect.py --model ../data/models/lego_500_efficientdet_lite2_wholemodelRetune_edgetpu.tflite --enableEdgeTPU --frameWidth 1080 --frameHeight 540
