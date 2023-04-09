@@ -89,7 +89,7 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
     #image = picam2.switch_mode_and_capture_array(capture_config, "main")
     image = picam2.capture_array()
     metadata = picam2.capture_metadata()
-    print("!AAAAAA "metadata["ExposureTime"], metadata["AnalogueGain"])
+    print("!AAAAAA ",metadata["ExposureTime"], metadata["AnalogueGain"])
   #while cap.isOpened():
   #  success, image = cap.read()
   #  if not success:
